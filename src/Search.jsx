@@ -8,8 +8,7 @@ const Search = () => {
 
   const searchHouses = async () => {
     !address ? setError('Please enter a valid address!') : setError('');
-    console.log('address: ', address, error)
-
+    // console.log('address: ', address, error)
     const headers = {
       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8; application/json'
     }

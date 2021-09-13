@@ -23,7 +23,7 @@ app.use('*', (req, res) => {
 })
 
 app.use((err, req, res, next) => {
-  console.log(err)
+  console.log(err);
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,
