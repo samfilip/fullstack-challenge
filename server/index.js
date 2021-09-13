@@ -5,8 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-const csvParser = require('./csvParser');
-const csvController = require('./csvParser');
+const csvController = require('./controllers/csvController');
 
 app.use(cors());
 app.use(express.json());
