@@ -31,17 +31,20 @@ const csvController = {
   searchCSV (req, res, next) {
     if (!req.params.address) res.status(400).send('Please include a valid search parameter')
     const address = req.params.address.split('-').join(' ')
-
-    function camelize(text) {
-      text = text.toLowerCase().replace(/[-_\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : ``);
-      return text.substr(0, 1).toLowerCase() + text.substr(1);
-    }
     
     const searchResult = result.filter((ele) => ele.ADDRESS === address)
+    // converts text to camelCase and removes / # $ from strings
+    function camelize(text) {
+      text = text.toLowerCase().replace(/[-_/#\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : ``)
+      return text.substr(0, 1).toLowerCase() + text.substr(1)
+    }
+
     const response = {};
+
     for (let key in searchResult[0]) {
       response[camelize(key)] = searchResult[0][key]
     }
+
     res.locals.results = [response]
     
     return next()

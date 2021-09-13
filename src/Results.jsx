@@ -1,36 +1,52 @@
 
 const Results = (props) => {
-  const { ADDRESS, CITY, STATE, BEDS, CITY, REDFINURL } = props
+  const { 
+    saleType,
+    soldDate,
+    propertyType,
+    address,
+    city,
+    stateOrProvince,
+    zipOrPostalCode,
+    price,
+    beds,
+    baths,
+    location,
+    squareFeet,
+    lotSize,
+    yearBuilt,
+    daysOnMarket,
+    $SquareFeet,
+    hoaMonth,
+    status,
+    nextOpenHouseStartTime,
+    nextOpenHouseEndTime,
+    source,
+    mls,
+    favorite,
+    interested,
+    latitude,
+    longitude,
+    redfinurl
+  } = props
 
   return (
     <div className="results-container">
-      {ADDRESS}
-        "SALE TYPE": "MLS Listing",
-        "SOLD DATE": "",
-        "PROPERTY TYPE": "Condo/Co-op",
-        "ADDRESS": "574 Natoma St",
-        "CITY": "San Francisco",
-        "STATE OR PROVINCE": "CA",
-        "ZIP OR POSTAL CODE": "94103",
-        "PRICE": "465000",
-        "BEDS": "0",
-        "BATHS": "1.0",
-        "LOCATION": "San Francisco",
-        "SQUARE FEET": "",
-        "LOT SIZE": "1816",
-        "YEAR BUILT": "2012",
-        "DAYS ON MARKET": "8",
-        "$/SQUARE FEET": "",
-        "HOA/MONTH": "318",
-        "STATUS": "Active",
-        "NEXT OPEN HOUSE START TIME": "",
-        "NEXT OPEN HOUSE END TIME": "",
-        "SOURCE": "San Francisco MLS",
-        "MLS#": "421590626",
-        "FAVORITE": "N",
-        "INTERESTED": "Y",
-        "LATITUDE": "37.7790184",
-        "LONGITUDE": "-122.4094507"
+      <header>{address}</header>
+      {/* <div className="property-details"> */}
+        <span>{city}</span>
+        <span>{stateOrProvince}</span>
+        <span>{zipOrPostalCode}</span>
+        <span>{saleType}</span>
+        <span>{soldDate}</span>
+        <span>{propertyType}</span>
+        <span>{price}</span>
+        <span>{beds}</span>
+        <span>{baths}</span>
+        <span>{location}</span>
+        <span>{squareFeet}</span>
+        <span>{$SquareFeet}</span>
+      {/* </div> */}
     </div>
   )
 }
