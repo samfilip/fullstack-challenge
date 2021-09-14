@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import Results from './Results'
 
 const Search = () => {
   const [address, setAddress] = useState('')
@@ -8,15 +9,15 @@ const Search = () => {
 
   const searchHouses = async () => {
     !address ? setError('Please enter a valid address!') : setError('')
-    // console.log('address: ', address, error)
+    if (searchResults) setSearchResults([])
+    
     const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8; application/json'
+      'Content-Type': 'application/json'
     }
 
     try {
       const results = await axios.get(`http://localhost:3000/api/${address}`, { headers: headers })
       setSearchResults(results.data)
-      console.log(results.data)
     } catch (err) {
       console.error(err)
     }
@@ -26,7 +27,9 @@ const Search = () => {
     <div>
       <input placeholder="Enter Address" onChange={(e) => setAddress(e.target.value)} />
       <button type="submit" onClick={searchHouses}>Search</button>
-      {searchResults ? searchResults.map((el, i) => <p key={i}>{el}</p>) : error}
+      {searchResults.length > 0 
+      ? <Results {...searchResults[0]} /> 
+      : error}
     </div>
   )
 }

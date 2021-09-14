@@ -11,6 +11,9 @@ const csvController = {
         await fs.createReadStream(path.join(__dirname, '../Redfin_data.csv'))
           .pipe(csv())
           .on('data', (row) => {
+            const URL = row['URL (SEE http://www.redfin.com/buy-a-home/comparative-market-analysis FOR INFO ON PRICING)']
+            delete row['URL (SEE http://www.redfin.com/buy-a-home/comparative-market-analysis FOR INFO ON PRICING)']
+            row['REDFINURL'] = URL
             result.push(row)
           })
           .on('end', () => {
@@ -27,9 +30,23 @@ const csvController = {
 
   searchCSV (req, res, next) {
     if (!req.params.address) res.status(400).send('Please include a valid search parameter')
-
     const address = req.params.address.split('-').join(' ')
-    res.locals.results = result.filter((ele) => ele.ADDRESS === address)
+    
+    const searchResult = result.filter((ele) => ele.ADDRESS === address)
+    // converts text to camelCase and removes / # $ from strings
+    function camelize(text) {
+      text = text.toLowerCase().replace(/[-_/#\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : ``)
+      return text.substr(0, 1).toLowerCase() + text.substr(1)
+    }
+
+    const response = {};
+
+    for (let key in searchResult[0]) {
+      response[camelize(key)] = searchResult[0][key]
+    }
+
+    res.locals.results = [response]
+    
     return next()
   }
 
