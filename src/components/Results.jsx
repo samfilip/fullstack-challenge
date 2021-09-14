@@ -1,3 +1,4 @@
+import './Results.css'
 
 const Results = (props) => {
   const { 
@@ -29,6 +30,11 @@ const Results = (props) => {
     longitude,
     redfinurl
   } = props
+  
+  const handleClick = () => {
+    const newWindow = window.open(redfinurl, '_blank', 'noopener,nereferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
   return (
     <div className="results-container">
@@ -47,6 +53,7 @@ const Results = (props) => {
         <span>{squareFeet}</span>
         <span>{$SquareFeet}</span>
       {/* </div> */}
+      <button className="redfin-button" onClick={handleClick}>View on Redfin</button>
     </div>
   )
 }

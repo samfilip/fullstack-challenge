@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Results from './Results'
+import Results from './components/Results'
 
 const Search = () => {
   const [address, setAddress] = useState('')
@@ -18,6 +18,7 @@ const Search = () => {
     try {
       const results = await axios.get(`http://localhost:3000/api/${address}`, { headers: headers })
       setSearchResults(results.data)
+      console.log(results.data)
     } catch (err) {
       console.error(err)
     }
