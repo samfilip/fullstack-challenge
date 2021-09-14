@@ -1,3 +1,10 @@
+.results-container {
+  color: black;
+  border: 1px solid black;
+  width: 90%;
+  padding-left: 3px;
+}
+
 .redfin-button {
   color: #fff;
   background-color: #c82021;
@@ -6,4 +13,29 @@
   padding-top: 0;
   padding-right: 3px;
   padding-left: 3px;
+  border-radius: 5px;
+}
+
+.location {
+  border: 1px solid black;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.amenities {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

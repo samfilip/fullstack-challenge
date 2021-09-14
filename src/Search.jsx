@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Results from './components/Results'
+import './Search.css'
 
 const Search = () => {
   const [address, setAddress] = useState('')
@@ -25,13 +26,15 @@ const Search = () => {
   }
 
   return (
-    <div>
-      <input placeholder="Enter Address" onChange={(e) => setAddress(e.target.value)} />
-      <button type="submit" onClick={searchHouses}>Search</button>
+    <> 
+      <div className="search-container">
+        <input className="search-bar" placeholder="Enter Address" onChange={(e) => setAddress(e.target.value)} />
+        <button className="search-button" type="submit" onClick={searchHouses}>Search</button>
+      </div>
       {searchResults.length > 0 
       ? <Results {...searchResults[0]} /> 
       : error}
-    </div>
+    </>
   )
 }
 

@@ -36,24 +36,41 @@ const Results = (props) => {
     if (newWindow) newWindow.opener = null
   }
 
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
   return (
     <div className="results-container">
       <header>{address}</header>
-      {/* <div className="property-details"> */}
-        <span>{city}</span>
-        <span>{stateOrProvince}</span>
+      <div className="property-details location">
+        <span>{city}, </span>
+        <span>{stateOrProvince} </span>
         <span>{zipOrPostalCode}</span>
-        <span>{saleType}</span>
-        <span>{soldDate}</span>
-        <span>{propertyType}</span>
-        <span>{price}</span>
-        <span>{beds}</span>
-        <span>{baths}</span>
-        <span>{location}</span>
-        <span>{squareFeet}</span>
-        <span>{$SquareFeet}</span>
-      {/* </div> */}
-      <button className="redfin-button" onClick={handleClick}>View on Redfin</button>
+      </div>
+      <div className="property-details price">
+        <span>Sale Type: {saleType} </span>
+        <span>{soldDate} </span>
+        <span>Type: {propertyType} </span>
+        <span>Price: {formatter.format(price)}  </span>
+        <span>Lot size: {lotSize} Sq. Ft.</span>
+      </div>
+      <div className="property-details amenities">
+        <span>Beds: {beds} </span>
+        <span>Baths: {baths} </span>
+        <span>Location: {location} </span>
+        <span>Size: {squareFeet ? squareFeet : null}</span>
+        <span>Price/SqFeet: {$SquareFeet ? $SquareFeet: null}</span>
+        <div className="property-details amenities">
+          <span>Next Open House Start Time: {nextOpenHouseStartTime ? nextOpenHouseStartTime : 'N/A'} </span>
+          <span>Next Open House End Time: {nextOpenHouseEndTime ? nextOpenHouseStartTime : 'N/A'} </span>
+        </div>
+      </div>
+      <div className="buttons-row">
+        <a target="_blank" href={`http://www.google.com/maps/place/${latitude},${longitude}`}>View on Google Maps</a>
+        <button className="redfin-button" onClick={handleClick}>View on Redfin</button>
+      </div>
     </div>
   )
 }
