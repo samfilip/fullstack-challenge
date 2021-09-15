@@ -32,10 +32,9 @@ const csvController = {
   searchCSV (req, res, next) {
     if (!req.params.address) res.status(400).send('Please include a valid search parameter')
     
-    const address = req.params.address.split('-').join(' ')
+    const { address } = req.params
     
     const searchResult = result.filter((ele) => ele.ADDRESS.toLowerCase().includes(address.toLowerCase()))
-    console.log(searchResult)
 
     function camelize(text) {
       // converts text to camelCase and removes_ /# from strings

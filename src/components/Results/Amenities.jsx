@@ -1,7 +1,7 @@
 const Amenities = (props) => {
 
   return (
-    <div className="amenities-container">
+    <div className="child-container">
       <div className="property-details amenities left">
         <span>Beds:</span>
         <span>Baths:</span>
@@ -10,9 +10,9 @@ const Amenities = (props) => {
         <span>Price/SqFeet:</span>
       </div>
       <div className="property-details amenities right">
-        <span>{props.beds} </span>
-        <span>{props.baths} </span>
-        <span>{props.location} </span>
+        <span>{props.beds ? props.beds : 'N/A'} </span>
+        <span>{props.baths ? props.baths : 'N/A'} </span>
+        <span>{props.location ? props.location : 'N/A'} </span>
         <span>{props.squareFeet ? props.squareFeet : 'N/A'}</span>
         <span>{props.$SquareFeet ? props.$SquareFeet : 'N/A'}</span>
       </div>
@@ -20,8 +20,8 @@ const Amenities = (props) => {
         <span>Days Listed:</span>
         <span>Sale Type:</span>
         <span>Sold Date:</span>
-        <span>Next Open House Start Time:</span>
-        <span>Next Open House End Time:</span>
+        <span>Next Open House Start:</span>
+        <span>Next Open House End:</span>
       </div>
       <div className="property-details amenities right">
         <span>{props.daysOnMarket ? props.daysOnMarket : 'N/A'}</span>

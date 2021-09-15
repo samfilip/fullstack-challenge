@@ -6,7 +6,7 @@ const Price = (props) => {
   });
 
   return (
-    <div className="price-container">
+    <div className="child-container">
         <div className="property-details price left">
           <span>Type:</span>
           <span>Year Built:</span>
