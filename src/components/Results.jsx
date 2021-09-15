@@ -47,7 +47,7 @@ const Results = (props) => {
       <div className="property-details location">
         <span>{city}, </span>
         <span>{stateOrProvince} </span>
-        <span>{zipOrPostalCode}</span>
+        <span>{zipOrPostalCode} </span>
       </div>
       <div className="property-details price">
         <span>Sale Type: {saleType} </span>

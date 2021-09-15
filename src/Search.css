@@ -1,17 +1,25 @@
 .search-container {
-  border: 1px white solid;
+  border: 2px black solid;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 10px;
+  height: 8vh;
 }
+
+.header {
+  border: 2px solid black;
+  display: flex;
+}
+
 
 .search-bar {
   width: 30%;
   border-radius: 5px;
   padding-right: 5px;
   height: 4vh;
+  align-self: center;
 }
 
 .search-button {
@@ -20,5 +28,6 @@
   border-radius: 5px;
   background-color: red;
   color: white;
+  align-self: center;
 }
 
