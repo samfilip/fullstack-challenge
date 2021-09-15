@@ -1,12 +1,14 @@
 ## How to start application
 
-## (If Node not installed)
-## (If Node ^14.16.0 already installed: )
+- Make sure node is installed - recommend Node 14.16.0 or higher
 
 In your terminal go to your project directory:
 
 1. npm install
-2. npm run dev
+
+-- start webpack dev server and node server
+
+2. npm start 
 
 In your browser:
 
