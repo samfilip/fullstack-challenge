@@ -13,6 +13,11 @@
   display: flex;
 }
 
+.search-title {
+  align-self: center;
+  color: black;
+  margin-right: 5px;
+}
 
 .search-bar {
   width: 30%;
@@ -33,5 +38,4 @@
 
 .error {
   color: red;
-
 }

@@ -32,24 +32,17 @@
 }
 
 .location-container {
-  /* border: 1px solid black; */
   margin: 20px;
-
 }
 
 .price {
   display: flex;
   flex-direction: column;
   width: 25%;
-  /* border: 1px solid black; */
 }
 
 .amenities {
-  /* border: 1px solid black; */
-  /* display: flex;
-  flex-direction: column; */
   width: 25%;
-  /* justify-content: space-evenly; */
   font-size: 20px;
 }
 

@@ -3,6 +3,7 @@ import axios from 'axios'
 import Results from './Results/Results'
 import './Search.css'
 
+
 const Search = () => {
   const [address, setAddress] = useState('')
   const [searchResults, setSearchResults] = useState([])
@@ -24,14 +25,19 @@ const Search = () => {
 
   const handleKeyPress = (e) => (e.which === 13) ? searchHouses() : null
 
+  const parseSearchResults = () => {
+    return searchResults.map(home => <Results key={home.mls} {...home} />)
+  }
+
   return (
     <> 
       <div className="search-container">
-        <input className="search-bar" placeholder="Enter Address" onKeyPress={(e) => handleKeyPress(e)} onChange={(e) => setAddress(e.target.value)} />
+        <h4 className="search-title">Address:</h4>
+        <input className="search-bar" placeholder="e.g. 'downey st' or '574 Natoma St'" onKeyPress={(e) => handleKeyPress(e)} onChange={(e) => setAddress(e.target.value)} />
         <button className="search-button" type="submit" onClick={searchHouses}>Search</button>
       </div>
       {searchResults.length > 0 
-      ? <Results {...searchResults[0]} /> 
+      ? parseSearchResults()
       : <div className="error">{error}</div>}
     </>
   )

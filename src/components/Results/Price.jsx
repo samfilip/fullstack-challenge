@@ -14,10 +14,10 @@ const Price = (props) => {
           <span>HOA/Month:</span>
         </div>
         <div className="property-details price right">
-          <span>{props.propertyType}</span>
-          <span>{props.yearBuilt} </span>
-          <span>{formatter.format(props.price)}</span>
-          <span>{formatter.format(props.hoaMonth)}</span>
+          <span>{props.propertyType ? props.propertyType : 'N/A'}</span>
+          <span>{props.yearBuilt ? props.yearBuilt : 'N/A'} </span>
+          <span>{props.price ? formatter.format(props.price) : 'N/A'}</span>
+          <span>{props.hoaMonth ? formatter.format(props.hoaMonth) : 'N/A'}</span>
         </div>
         <div className="property-details price left">
           <span>Lot size:</span>
@@ -26,10 +26,10 @@ const Price = (props) => {
           <span>MLS:</span>
         </div>
         <div className="property-details price right">
-          <span>{props.lotSize} Sq. Ft.</span>
-          <span>{props.status}</span>
-          <span>{props.source}</span>
-          <span>{props.mls}</span>
+          <span>{props.lotSize ? props.lotSize : 'N/A'} Sq. Ft.</span>
+          <span>{props.status ? props.status : 'N/A'}</span>
+          <span>{props.source ? props.source : 'N/A'}</span>
+          <span>{props.mls ? props.mls : 'N/A'}</span>
         </div>
       </div>
   )
