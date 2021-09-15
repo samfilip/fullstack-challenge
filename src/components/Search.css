@@ -13,6 +13,11 @@
   display: flex;
 }
 
+.search-title {
+  align-self: center;
+  color: black;
+  margin-right: 5px;
+}
 
 .search-bar {
   width: 30%;
@@ -26,8 +31,11 @@
   height: 4.5vh;
   margin-left: 5px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #177fff;
   color: white;
   align-self: center;
 }
 
+.error {
+  color: red;
+}

@@ -1,0 +1,78 @@
+.results-container {
+  color: black;
+  width: 90%;
+  padding-left: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80vh;
+  border-radius: 5px;
+  margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.property-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.amenities-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.location-container {
+  margin: 20px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.amenities {
+  width: 25%;
+  font-size: 20px;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  font-size: 24px;
+}
+
+.redfin-button {
+  color: #fff;
+  background-color: #177fff;
+  height: 46px;
+  width: 10%;
+  padding-top: 0;
+  padding-right: 3px;
+  padding-left: 3px;
+  border-radius: 5px;
+}
+
+.left {
+  text-align: left;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+  margin-right: 20px;
+}

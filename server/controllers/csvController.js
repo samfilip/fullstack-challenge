@@ -2,7 +2,7 @@ const csv = require('csv-parser')
 const fs = require('fs')
 const path = require('path')
 const result = []
-const index = require('../')
+
 const csvController = {
 
   async readCSV (req, res, next) {
@@ -34,21 +34,26 @@ const csvController = {
     
     const address = req.params.address.split('-').join(' ')
     
-    const searchResult = result.filter((ele) => ele.ADDRESS === address)
-    
+    const searchResult = result.filter((ele) => ele.ADDRESS.toLowerCase().includes(address.toLowerCase()))
+    console.log(searchResult)
+
     function camelize(text) {
       // converts text to camelCase and removes_ /# from strings
       text = text.toLowerCase().replace(/[-_/#\s.]+(.)?/g, (_, c) => c ? c.toUpperCase() : ``)
       return text.substr(0, 1).toLowerCase() + text.substr(1)
     }
 
-    const response = {};
-
-    for (let key in searchResult[0]) {
-      response[camelize(key)] = searchResult[0][key]
-    }
-
-    res.locals.results = [response]
+    
+    const response = []
+    searchResult.forEach((el) => {
+      const home = {}
+      for (let key in el) {
+        home[camelize(key)] = el[key]
+      }
+      response.push(home)
+    })
+      
+    res.locals.results = response
     
     return next()
   }
