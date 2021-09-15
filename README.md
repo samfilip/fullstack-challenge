@@ -12,6 +12,6 @@ In your terminal go to your project directory:
 
 In your browser:
 
-3. Go to http://localhost:3001/ or the address specified in your terminal
+3. Go to http://localhost:3001/ or the address specified in your terminal under 'Local'
 
 

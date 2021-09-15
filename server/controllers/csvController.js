@@ -2,7 +2,7 @@ const csv = require('csv-parser')
 const fs = require('fs')
 const path = require('path')
 const result = []
-const index = require('../')
+
 const csvController = {
 
   async readCSV (req, res, next) {
@@ -34,7 +34,7 @@ const csvController = {
     
     const address = req.params.address.split('-').join(' ')
     
-    const searchResult = result.filter((ele) => ele.ADDRESS === address)
+    const searchResult = result.filter((ele) => ele.ADDRESS.toLowerCase() === address.toLowerCase())
     
     function camelize(text) {
       // converts text to camelCase and removes_ /# from strings

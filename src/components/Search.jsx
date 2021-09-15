@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Results from './components/Results'
+import Results from './Results/Results'
 import './Search.css'
 
 const Search = () => {
@@ -9,7 +9,7 @@ const Search = () => {
   const [error, setError] = useState('')
 
   const searchHouses = async () => {
-    !address ? setError('Please enter a valid address!') : setError('')
+    !address ? setError('Please enter a valid address and try again.') : setError('')
     if (searchResults) setSearchResults([])
 
     try {
@@ -32,7 +32,7 @@ const Search = () => {
       </div>
       {searchResults.length > 0 
       ? <Results {...searchResults[0]} /> 
-      : error}
+      : <div className="error">{error}</div>}
     </>
   )
 }
