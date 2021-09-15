@@ -17,7 +17,10 @@ const Search = () => {
       const results = await axios.get(`http://localhost:3000/api/${address}`, 
         { headers: { 'Content-Type': 'application/json' } 
       })
-      setSearchResults(results.data)
+      !results.data.length 
+      ? setError('No results found. Please try a different address.') 
+      : setSearchResults(results.data)
+      
     } catch (err) {
       console.error(err)
     }
@@ -26,6 +29,7 @@ const Search = () => {
   const handleKeyPress = (e) => (e.which === 13) ? searchHouses() : null
 
   const parseSearchResults = () => {
+    console.log('parseSearchResults', searchResults)
     return searchResults.map(home => <Results key={home.mls} {...home} />)
   }
 
@@ -33,8 +37,16 @@ const Search = () => {
     <> 
       <div className="search-container">
         <h4 className="search-title">Address:</h4>
-        <input className="search-bar" placeholder="e.g. 'downey st' or '574 Natoma St'" onKeyPress={(e) => handleKeyPress(e)} onChange={(e) => setAddress(e.target.value)} />
-        <button className="search-button" type="submit" onClick={searchHouses}>Search</button>
+        <input 
+          className="search-bar" 
+          placeholder="e.g. 'downey st' or '574 Natoma St'" 
+          onKeyPress={(e) => handleKeyPress(e)} 
+          onChange={(e) => setAddress(e.target.value)} />
+        <button 
+          className="search-button" 
+          type="submit" 
+          onClick={searchHouses}
+        >Search</button>
       </div>
       {searchResults.length > 0 
       ? parseSearchResults()
