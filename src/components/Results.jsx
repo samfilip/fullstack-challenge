@@ -54,6 +54,7 @@ const Results = (props) => {
         <span>{soldDate} </span>
         <span>Type: {propertyType} </span>
         <span>Price: {formatter.format(price)}  </span>
+        <span>Year Built: {yearBuilt} </span>
         <span>Lot size: {lotSize} Sq. Ft.</span>
       </div>
       <div className="property-details amenities">
@@ -62,10 +63,10 @@ const Results = (props) => {
         <span>Location: {location} </span>
         <span>Size: {squareFeet ? squareFeet : null}</span>
         <span>Price/SqFeet: {$SquareFeet ? $SquareFeet: null}</span>
-        <div className="property-details amenities">
-          <span>Next Open House Start Time: {nextOpenHouseStartTime ? nextOpenHouseStartTime : 'N/A'} </span>
-          <span>Next Open House End Time: {nextOpenHouseEndTime ? nextOpenHouseStartTime : 'N/A'} </span>
-        </div>
+      </div>
+      <div className="property-details amenities">
+        <span>Next Open House Start Time: {nextOpenHouseStartTime ? nextOpenHouseStartTime : 'N/A'} </span>
+        <span>Next Open House End Time: {nextOpenHouseEndTime ? nextOpenHouseStartTime : 'N/A'} </span>
       </div>
       <div className="buttons-row">
         <a target="_blank" href={`http://www.google.com/maps/place/${latitude},${longitude}`}>View on Google Maps</a>
