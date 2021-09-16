@@ -19,8 +19,7 @@ const Search = () => {
       })
       !results.data.length 
       ? setError('No results found. Please try a different address.') 
-      : setSearchResults(results.data)
-      
+      : setSearchResults(results.data) 
     } catch (err) {
       console.error(err)
     }
@@ -29,7 +28,7 @@ const Search = () => {
   const handleKeyPress = (e) => (e.which === 13) ? searchHouses() : null
 
   const parseSearchResults = () => {
-    console.log('parseSearchResults', searchResults)
+    // using mls number is not the ideal key, would use id if pulling from db
     return searchResults.map(home => <Results key={home.mls} {...home} />)
   }
 
@@ -52,7 +51,7 @@ const Search = () => {
       </div>
       {searchResults.length > 0
       ? parseSearchResults()
-      : <div className="error">{error}</div>}
+      : <div className="error">**{error}**</div>}
     </>
   )
 }

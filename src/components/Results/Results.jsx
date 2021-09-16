@@ -5,7 +5,7 @@ import Price from './Price'
 import Amenities from './Amenities'
 
 const Results = (props) => {
-  // this would be a good place to use contextAPI
+  // this could be a good place to consider contextAPI
   const { 
     saleType,
     soldDate,

@@ -14,4 +14,15 @@ In your browser:
 
 3. Go to http://localhost:3001/ or the address specified in your terminal under 'Local'
 
+## Testing
 
+To run frontend tests, use the "test" script by running "npm test" in your terminal from root directory
+
+
+To run server tests, use the "test:server" command by running "npm run test:server" in your terminal from the root directory.
+
+## Troubleshooting
+
+If nodemon isn't working:
+
+1. npm i -g nodemon
