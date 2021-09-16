@@ -8,7 +8,7 @@ In your terminal go to your project directory:
 
 -- start Vite dev server and nodemon server
 
-2. npm start 
+2. npm start
 
 In your browser:
 

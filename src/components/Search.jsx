@@ -48,7 +48,7 @@ const Search = () => {
           onClick={searchHouses}
         >Search</button>
       </div>
-      {searchResults.length > 0 
+      {searchResults.length > 0
       ? parseSearchResults()
       : <div className="error">{error}</div>}
     </>
