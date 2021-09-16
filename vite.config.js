@@ -3,6 +3,6 @@ import react from 'vite-preset-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // this plugin removes the need to import react to every component when using Vite
-  plugins: [react()]
+  // injectReact set to false in order for testing to work
+  plugins: [react({ injectReact: false })]
 })

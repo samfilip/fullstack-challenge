@@ -1,3 +1,4 @@
+import React from 'react'
 import './Results.css'
 import Title from './Title'
 import Price from './Price'

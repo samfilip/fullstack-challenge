@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Price = (props) => {
 
   const formatter = new Intl.NumberFormat('en-US', {

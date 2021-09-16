@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import Results from './Results/Results'
 import './Search.css'
@@ -40,11 +40,13 @@ const Search = () => {
         <input 
           className="search-bar" 
           placeholder="e.g. 'downey st' or '574 Natoma St'" 
+          role="searchBar"
           onKeyPress={(e) => handleKeyPress(e)} 
           onChange={(e) => setAddress(e.target.value)} />
         <button 
           className="search-button" 
-          type="submit" 
+          type="submit"
+          name="search"
           onClick={searchHouses}
         >Search</button>
       </div>
