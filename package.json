@@ -1,6 +1,6 @@
 {
   "name": "fullstack-challenge",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite && node server/index.js",
     "start": "concurrently \"vite\" \"nodemon server/index.js\"",

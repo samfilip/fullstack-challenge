@@ -49,9 +49,8 @@ const Search = () => {
           onClick={searchHouses}
         >Search</button>
       </div>
-      {searchResults.length > 0
-      ? parseSearchResults()
-      : <div className="error">**{error}**</div>}
+      {searchResults.length > 0 ? parseSearchResults() : null}
+      {error ? <div className="error">{error}</div> : null}
     </>
   )
 }

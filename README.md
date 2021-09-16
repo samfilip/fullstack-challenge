@@ -26,3 +26,8 @@ To run server tests, use the "test:server" command by running "npm run test:serv
 If nodemon isn't working:
 
 1. npm i -g nodemon
+
+
+## Style guide
+
+This project uses the eslint js standard code style.
